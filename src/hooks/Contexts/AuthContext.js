@@ -332,6 +332,10 @@ export const AuthProvider = ({children}) => {
 
     const deleteUserFunction = async () => {
         try {
+            if(authState.user._id ===  "f9cba43f-7882-4d40-9b7e-a7932629ad43"){
+                logoutUserFunction();
+                return;
+            }
             setIsLoading(true);
             const response = await fetch(`${currUrl}/api/auth/delete`, {
                 method: 'DELETE',

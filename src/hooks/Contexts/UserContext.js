@@ -35,7 +35,7 @@ export const UserProvider = ({children}) => {
             }
         } catch (error) {
             setIsLoading(false);
-            navigate('/home');
+            navigate('/error');
             showNotif('Error', 'Failure in fetching user');
         }
     }

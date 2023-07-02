@@ -2,7 +2,7 @@
 
 .searchBar{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     font-size: 1.5rem;
     z-index: 3;
@@ -16,20 +16,21 @@
     top: 0;
 }
 
+@media only screen and (max-width: 900px) {
+    .searchBar{
+        justify-content: flex-end;
+    }
+}
+
 .searchInputs{
     position: relative;
     flex: 0 0 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 4rem;
+    padding: 0 1rem 0 2rem;
     height: 100%;
-}
-
-@media only screen and (max-width: 1400px) {
-    .searchInputs{
-        padding-left: 0;
-    }
+    max-width: 40rem;
 }
 
 .searchInput{
