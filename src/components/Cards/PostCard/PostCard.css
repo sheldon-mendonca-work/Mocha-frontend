@@ -1,0 +1,119 @@
+@import url('../../Layouts/vars.css');
+
+.postcard{
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    grid-template-rows: min-content 1fr max-content min-content;
+    width: 100%;
+    padding: 2rem;
+    padding-bottom: 0;
+    font-size: 1.7rem;
+    border-bottom: 1px solid rgb(0,0,0,0.1);
+}
+
+.postcard:hover{
+    background-color: rgba(var(--color-primary-light-hover-2));
+}
+
+.postcard-img{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+
+}
+
+.postcard-imgdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.postcard-userdetails{
+    display: flex;
+    justify-content: space-between;
+    
+    grid-row: 1/2;
+    grid-column: 2/-1;
+}
+
+.postcard-user{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.postcard-expand{
+    width: 3rem;
+    align-self: flex-start;
+}
+
+.postcard-displayName{
+    color: rgb(var(--color-light-text-1));
+    font-weight: 700;
+    padding-right: 2px;
+}
+
+.postcard-username, .postcard-time{
+    color: rgb(var(--color-light-text-2));
+}
+
+.postcard-userpost{
+    color: rgb(var(--color-light-text-3));
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    padding-top: 1rem;
+}
+
+.postcard-postaction{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    
+}
+
+.postcard-imgArrDiv{
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.postcard-imgArrDiv>img{
+    width: 100%;
+}
+
+.postcard-time{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.postcard-list{
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgb(0,0,0,0.1);
+    border-bottom: 1px solid rgb(0,0,0,0.1);
+    font-size: 1.3rem;
+}
+
+.postcard-list>span{
+    cursor: pointer;
+}
+
+.postcard-list>span:hover{
+    text-decoration: underline;
+}
+
+.postcard-list-length{
+    font-weight: 700;
+    margin-right: 3px;
+}

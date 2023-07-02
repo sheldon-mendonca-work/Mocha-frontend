@@ -1,0 +1,15 @@
+@import url('../../Layouts/vars.css');
+
+.buttonRounded{
+    border-radius: 100rem;
+    border: none;
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: inherit;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

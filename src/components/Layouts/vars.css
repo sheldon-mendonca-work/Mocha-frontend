@@ -1,0 +1,30 @@
+:root{
+    --color-black: 0,0,0;
+    --color-white: 255, 255, 255;
+
+    --color-light-1: 221, 221, 221; 
+
+    --loading-animation-c1: 230, 92, 0;
+    --loading-animation-c2: 24, 178, 1;
+    --loading-animation-c3: 4, 86, 200;
+
+    --color-success: 34, 197, 94;
+
+    
+    --color-primary-light: 29, 155, 240;
+    --color-primary-light-2: 26, 140, 216;
+
+
+    --color-secondary-light: 178, 132, 81;
+    --color-primary-light-hover-1: 15, 20, 25, 0.15;
+    --color-primary-light-hover-2: 0, 0, 0, 0.03;
+    --color-primary-light-hover-3: 238, 238, 238;
+
+    --color-light-border-1: 0, 0, 0, 0.1;
+
+    --color-light-text-1: 0, 0, 0;
+    --color-light-text-2: 83, 100, 113;
+    --color-light-text-3: 15, 20, 25;
+
+    --color-input-bottom: 120, 120, 120
+}

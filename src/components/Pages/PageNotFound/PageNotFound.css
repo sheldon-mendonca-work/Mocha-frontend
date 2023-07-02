@@ -1,0 +1,77 @@
+.notFoundContainer{
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+}
+
+@media only screen and (max-width: 768px){
+    .notFoundContainer{
+        flex-direction: column-reverse;
+        
+    }
+}
+
+.containerLeft{
+    flex: 0 0 50%;
+    display: flex;
+    padding: 3rem;
+}
+
+@media only screen and (max-width: 768px){
+    .containerLeft{
+        flex: 1;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .containerLeft{
+        padding: 1rem;
+    }
+}
+
+.containerLeftImg{
+    max-width: 100%;
+}
+
+.containerRight{
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 500px){
+    .containerRight{
+        padding: 1rem;
+    }
+}
+
+.containerRight > h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-right: -0.3rem;
+}
+
+.containerRight > p{
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.notFoundLink, .notFoundLink:link,
+.notFoundLink:visited{
+    text-decoration: underline;
+    color: currentColor;
+    transition: all 0.5s;
+}
+
+.notFoundLink:hover{
+    background-color: rgb(var(--color-primary-light));
+    color: rgb(var(--color-white));
+    padding: 2px;
+    transform: translateY(-2px);
+}

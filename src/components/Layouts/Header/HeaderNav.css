@@ -1,0 +1,71 @@
+@import url('../vars.css');
+
+.header-nav-list{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+
+.header-nav-list > span{
+    font-size: 2rem;
+    text-decoration: none;
+    color: rgb(var(--color-black));
+    height: 6rem;
+    padding: 3px 0;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.header-nav-list-span{
+    border-radius: 10rem;
+    padding: 1rem 3rem 1rem 2rem;
+    margin-right: auto;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.2s;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-nav-list-span{
+        margin-right: 0;
+        padding: 1rem 2rem;
+    }
+}
+
+.header-nav-list-item{
+    display: flex;
+    align-items: flex-end;
+}
+
+.header-nav-list>span:hover .header-nav-list-span{
+    background-color: rgba(var(--color-primary-light-hover-3));
+}
+
+.header-nav-more{
+    position: relative;
+}
+
+.header-nav-svg{
+    height: 2.5rem;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-nav-text{
+        display: none;
+    }
+}
+
+.expandnavmorecontent{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(var(--color-white));
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.5);
+    z-index: 5;
+    width: 20rem;
+}

@@ -1,0 +1,55 @@
+@import url('../../Layouts/vars.css');
+
+.expandmorecard{
+    position: relative;
+    
+}
+.expandmorecontent{
+    position: absolute;
+    right: 0;
+    width: 20rem;
+    background-color: rgb(var(--color-white));
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.5);
+    z-index: 5;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: rgba(0,0,0, 0.7);
+    fill: rgba(0,0,0, 0.7);
+}
+
+.expand-content{
+    padding: 1rem;
+    border: 1px solid rgba(var(--color-light-border-1));
+}
+
+.expand-content:hover{
+    background-color: rgba(var(--color-light-border-1));
+}
+
+.expand-content-svg{
+    width: 3rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.exi{
+    width: 3rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.exi:hover{
+    background-color: rgb(var(--color-primary-light-hover-1));
+}
+
+.expandbackdrop{
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    cursor: default;
+    z-index: 4;
+}

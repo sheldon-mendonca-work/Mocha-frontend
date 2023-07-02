@@ -1,0 +1,103 @@
+@import url('../vars.css');
+
+.header-user-card{
+    position: relative;
+    z-index: 1;
+}
+
+.header-user-card-content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+
+.header-user-card:hover .header-user-card-content{
+    border-radius: 100rem;
+    background-color: rgba(var(--color-primary-light-hover-1));
+}
+
+.header-user-card-img > img{
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.header-user-card-name{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-user-card-name{
+        display: none;
+    }
+}
+
+.header-user-card-displayName{
+    color: rgb(var(--color-light-text-1));
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.header-user-card-userName{
+    color: rgb(var(--color-light-text-2));
+    margin-right: auto;
+}
+
+.header-user-card-svg{
+    height: 100%;
+    width: 2.5rem;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-user-card-svg{
+        display: none;
+    }
+}
+
+.expandusercontent{
+    position: absolute;
+    bottom: 110%;
+    left: 0;
+    width: 20rem;
+    z-index: 5;
+    background-color: rgb(var(--color-white));
+}
+
+.expandbackdrop{
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    cursor: default;
+    z-index: 2;
+}
+
+.expand-content{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    justify-content: flex-start;
+}
+
+.expand-user-svg{
+    height: 2rem;
+}
+
+.exp-logout{
+    fill: rgb(239, 68, 68);
+    color: rgb(239, 68, 68);
+}
+
+.exp-delete{
+    fill: rgb(239, 68, 68);
+    color: rgb(239, 68, 68);
+}

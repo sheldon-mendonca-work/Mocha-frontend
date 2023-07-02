@@ -1,0 +1,109 @@
+.tweetform{
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    grid-template-rows: 1fr max-content 5rem;
+    width: 100%;
+    padding: 2rem;
+    
+}
+
+.tweetform-userimg{
+    height: 4rem;
+    border-radius: 50%;
+}
+    
+.tweetform-input-div{
+    grid-column: 2/3;
+    grid-row: 1/2; 
+}
+
+.tweetform-input{  
+    resize: none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    overflow: hidden;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    height: 100%;
+}
+
+.tweetform-input:focus, .tweetform-input:active{
+    outline: none;
+}
+
+.tweetform-media{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    font-size: 1.2rem;
+}
+
+.tweetform-media-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tweetform-media-cross{
+    height: 1rem;
+}
+
+.tweetform-actions{
+    grid-column: 1/3;
+    grid-row: 3/4;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tweetform-actions .tweetform-submit{
+    height: 3rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    color: rgb(var(--color-white));
+    background-color: rgb(var(--color-primary-light));
+}
+
+.tweetform-actions-left{
+    height: 100%;
+    display: flex;
+}
+
+.form-icon{
+    height: 4rem;
+    padding: 1rem;
+    fill: rgb(var(--color-primary-light));
+}
+
+.tweetform-fileInputspan{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tweetform-fileInputspan:hover{
+    background-color: rgba(var(--color-primary-light-hover-1));
+}
+
+.tweetform-fileInput{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.tweetform-submit.validForm{
+    opacity: 1;
+}
+
+.tweetform-submit.invalidForm{
+    opacity: 0.5;
+}

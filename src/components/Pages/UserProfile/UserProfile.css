@@ -1,0 +1,54 @@
+@import url('../../Layouts/vars.css');
+
+
+.userprofile-main{
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.userprofile-feed{
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.userprofile-types{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.userprofile-type{
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.2s;
+}
+
+.userprofile-type:not(:last-child){
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.userprofile-type:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.no-posts-found{
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem;
+}
+
+.no-posts-found>span{
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.2s;
+}
+
+.no-posts-found>span:hover{
+    color: rgb(var(--color-primary-light));
+}

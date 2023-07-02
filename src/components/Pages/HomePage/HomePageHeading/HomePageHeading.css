@@ -1,0 +1,43 @@
+@import url('../../../Layouts/vars.css');
+
+.homepage-heading{
+    background-color: transparent;
+    position: sticky;
+    top: 6rem;
+}
+
+.heading2{
+    height: 6rem;
+    padding: 2rem;
+}
+
+.homepage-heading{
+
+    background-color: rgb(var(--color-white), 0.9);
+}
+
+.feedsort-heading{
+    width: 100%;
+    display: flex;
+}
+
+.feedsort-button{
+    flex: 0 0 50%;
+    text-align: center;
+    text-decoration:  none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(var(--color-light-text-1));
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedsort-button:active{
+    border-bottom: 3px solid rgb(var(--color-primary-light));
+}
+
+.feedsort-heading .homepage-active{
+    border-bottom: 3px solid rgb(var(--color-primary-light));
+}

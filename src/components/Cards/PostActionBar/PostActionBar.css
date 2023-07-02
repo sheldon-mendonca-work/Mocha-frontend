@@ -1,0 +1,46 @@
+.postaction-svg{
+    height: 2rem;
+}
+
+.postaction-desc{
+    padding: 0 1rem;
+}
+
+.postaction-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(var(--color-light-text-2));
+    padding: 1rem; 
+    border-radius: 100rem;
+}
+
+.postaction-link:hover{
+    background-color: rgb(var(--color-primary-light-hover-1));
+}
+
+.postaction-like{
+    fill: currentColor;
+}
+
+.postaction-dislike, .postaction-dislike+.postaction-desc{
+    fill: rgb(249, 24, 128);
+    color: rgb(249, 24, 128);
+}
+
+.postaction-link-like:hover{
+    background-color: rgba(249, 24, 128, 0.3);
+}
+
+.postaction-link-bookmark:hover{
+    background-color: rgba(0,186,124,0.3);
+}
+
+.postaction-removebookmark, .postaction-removebookmark+.postaction-desc{
+    fill: rgb(0,186,124);
+    color: rgb(0,186,124);
+}
+
+.postaction-addbookmark{
+    fill: currentColor;
+}

@@ -1,0 +1,97 @@
+@import url('../vars.css');
+
+.header{
+    
+    background-color: rgba(var(--color-white));
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    text-align: right;
+}
+
+.header-content{
+    max-width: 27rem;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1rem;
+    position: relative;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-content{
+        align-items: flex-end;
+        width: fit-content;
+    }
+}
+
+.mocha-heading-1{
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 1270px) {
+    .mocha-heading-1{
+        width: fit-content;
+        aspect-ratio: 1;
+    }
+}
+
+.mocha-heading-1:hover{
+    background-color: rgba(var(--color-primary-light-hover-1));
+}
+
+.mocha-icon{
+    height: 3rem;
+}
+
+.mocha-icon > path{
+    fill: rgb(var(--color-primary-light));
+}
+
+.header-tweet-button{
+    background-color: rgb(var(--color-primary-light));
+    color: rgb(var(--color-white));
+    transition: all 0.2s;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-tweet-button.buttonRounded{
+        display: none;
+    }
+}
+
+.header-tweet-button:hover{
+    background-color: rgb(var(--color-primary-light-2));
+}
+
+.header-tweet-icon{
+    background-color: rgb(var(--color-primary-light));
+    fill: rgb(var(--color-white));
+    transition: all 0.2s;
+    display: none;
+    width: 5rem;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 1270px) {
+    .header-tweet-icon{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+}
+
+.header-tweet-icon:hover{
+    background-color: rgb(var(--color-primary-light-2));
+}

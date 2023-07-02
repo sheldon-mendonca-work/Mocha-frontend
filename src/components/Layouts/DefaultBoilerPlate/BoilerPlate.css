@@ -1,0 +1,70 @@
+@import url('../vars.css');
+
+
+.boilerPlate{
+    display: grid;
+    grid-template-columns: minmax(min-content, 3fr) 60rem 3fr;
+    grid-template-rows: 6rem 1fr;
+    position: relative;
+}
+
+@media only screen and (max-width: 1000px) {
+    .boilerPlate{
+        grid-template-columns: min-content 1fr min-content;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .boilerPlate{
+        grid-template-columns: min-content max-content 1fr;
+        grid-template-rows: 6rem 1fr min-content;
+    }
+}
+
+.header{
+    grid-column: 1/2;
+    grid-row: 1/-1;
+}
+
+.mainContent{
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .mainContent{
+        grid-column: 2/-1;
+        grid-row: 2/3;
+    }
+}
+
+
+.boilerPlateHeading{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    position: sticky;
+    top: 0;
+    background-color: rgba(var(--color-white), 0.9);
+}
+
+.rightsidebar{
+    grid-column: 3/4;
+    grid-row: 2/-1;
+
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 6rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+    .rightsidebar{
+        height: 100%;
+        grid-column: 2/-1;
+        grid-row: 3/-1;
+    }
+}

@@ -1,0 +1,42 @@
+@import url('../vars.css');
+
+.loaderPage{
+    position: fixed;
+    left: 0;
+    top: 0;  
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(var(--color-white), 0.1), rgba(var(--color-white), 0.1));
+    z-index: 3;
+}
+
+.loader{
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    fill: rgb(var(--color-primary-light));
+    animation: loadingAnimation 2s linear infinite;
+}
+
+
+
+
+@keyframes loadingAnimation {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(180deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}

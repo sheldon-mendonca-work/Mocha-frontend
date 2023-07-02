@@ -1,0 +1,94 @@
+@import url('../../../Layouts/vars.css');
+
+.userprofile-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userprofile-card-bnr-div{
+    width: 100%;
+    height: 20rem;
+    position: relative;
+}
+
+.userprofile-card-bannerimg{
+    width: 100%;
+    height: 100%;
+}
+
+.userprofile-card-imgdiv{
+    height: 60%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,25%);
+    
+    border: 5px solid rgb(var(--color-white));
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.userprofile-card-img{
+    height: calc(100% + 10px);
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.userprofile-card-content{
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 3rem 0 1rem 0;
+}
+
+.userprofile-name-div{
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    align-items: flex-end;
+}
+
+.userprofile-displayname{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.userprofile-username{
+    color: rgba(var(--color-light-text-2));
+}
+
+.userprofile-edit-button{
+    border: 1px solid rgba(var(--color-light-text-2));
+    background-color: rgb(var(--color-black));
+    padding: 1rem 2rem;
+    border-radius: 100rem;
+    color: rgb(var(--color-white));
+    font-weight: 700;
+    transition: all 0.1s;
+}
+
+.userprofile-edit-button:hover{
+    opacity: 0.8;
+}
+
+.userprofile-bio{
+    margin: 2rem 0 1rem 0;
+}
+
+.userprofile-followcard{
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.userprofile-follownum{
+    font-weight: 700;
+}
+
+.userprofile-follower:hover, .userprofile-following:hover{
+    text-decoration: underline;
+}

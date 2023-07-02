@@ -1,0 +1,115 @@
+.loginPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.login-main{
+    width: 40rem;
+}
+
+.login-heading{
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    text-align: center;
+}
+
+.login-button{
+    flex: 1;
+    cursor: pointer;
+    padding: 1rem;
+    border-bottom: 1px solid #777;
+    transition: all;
+}
+
+.login-button:hover{
+    background-color: rgba(var(--color-primary-light), 0.1);
+}
+
+.login-active{
+    border-bottom: 3px solid rgb(var(--color-primary-light));
+}
+
+.login-input{
+    width: 100%;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-span{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    gap: 0;
+}
+
+.login-input-div{
+    flex: 0 0 100%;
+}
+
+.login-input{
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rbga(var(--color-white), .5);
+    
+    width: 100%;
+    display: block;
+    transition: all .3s;
+    margin-bottom: 0.5rem;
+    outline: none;
+}
+
+.login-input:focus{
+    border-bottom: 3px solid rgb(var(--color-primary-light));
+}
+
+.login-input-left{
+    transition: all 0.5s;
+    transform: translateX(0);
+}
+
+.login-input-right{
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.login-submit{
+    width: 100%;
+    background-color: rgb(var(--color-primary-light));
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    color: rgb(var(--color-white));
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: all 0.2s;
+}
+
+.login-submit:hover{
+    opacity: 0.8;
+}
+
+.login-signup{
+    width: 100%;
+    color: rgb(var(--color-primary-light));
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    background-color: rgb(var(--color-white));
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: all 0.2s;
+}
+
+.login-signup:hover{
+    text-decoration: underline;
+}

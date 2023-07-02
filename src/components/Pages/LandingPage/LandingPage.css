@@ -1,0 +1,114 @@
+@import url('../../Layouts/vars.css');
+
+.landingPage{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+}
+
+.landingPageMain{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.landing-welcome-img{
+    background-color: rgb(var(--color-primary-light));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .landing-welcome-img{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+}
+
+.landing-mocha{
+    height: 20rem;
+    fill: rgb(var(--color-white));
+}
+
+@media only screen and (max-width: 768px) {
+    .landing-mocha{
+        display: none;
+    }
+}
+
+
+.landingPage-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .landingPage-right{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+}
+
+.landingPage-right-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--color-white), 0.7);
+    min-width: 40rem;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.landingPage-right-btndiv{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    gap: 1rem;
+}
+
+
+
+.landing-user-count{
+    background-color: rgb(var(--color-primary-light));
+    color: rgb(var(--color-white));
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5rem;
+}
+
+.landingPage-right-signup{
+    width: 100%;
+    border: none;
+    background-color: rgb(var(--color-primary-light));
+    color: rgb(var(--color-white));
+    padding: 1rem;
+    font-size: inherit;
+    cursor: pointer;
+}
+.landingPage-right-signup:hover{
+    background-color: rgb(var(--color-primary-light-2));
+    box-shadow: 0 0.5rem 1rem rgba(var(--color-black), 0.2);
+}
+
+.landingPage-right-login{
+    width: 100%;
+    border: none;
+    color: rgb(var(--color-primary-light));
+    background-color: rgb(var(--color-white));
+    padding: 1rem;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.landingPage-right-login:hover{
+    text-decoration: underline;
+    box-shadow: 0 0.5rem 1rem rgba(var(--color-black), 0.2);
+}

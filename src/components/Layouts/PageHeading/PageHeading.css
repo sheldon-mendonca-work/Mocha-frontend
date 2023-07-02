@@ -1,0 +1,23 @@
+@import url('../vars.css');
+
+.heading2{
+    display: inline-block;
+}
+
+.boilerPlateHeading{
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.heading-svg{
+    width: 4rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.heading-svg:hover{
+    background-color: rgb(var(--color-primary-light-hover-1));
+}

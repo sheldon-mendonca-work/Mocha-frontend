@@ -1,0 +1,47 @@
+.userdetailsmall{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.userdetailsmall:not(:last-child){
+    border-bottom: 1px solid #ddd;
+}
+
+.userdetailsmall-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.userdetailsmall-imgspan{
+    display: flex;
+    align-items: center;
+}
+
+.userdetailsmall-img{
+    width: 4rem;
+    border-radius: 50%;
+}
+
+.userdetailsmall-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.userdetailsmall-info-names{
+    display: flex;
+    flex-direction: column;
+}
+
+.userdetailsmall-info-disname{
+    font-weight: 700;
+}
+
+.userdetailsmall-button{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
