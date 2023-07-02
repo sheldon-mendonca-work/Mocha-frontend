@@ -30,7 +30,7 @@ const initAuthState = {
   }};
 
 
-const currUrl = 'http://localhost:3001';
+const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
 
 export const AuthContext = createContext();
 

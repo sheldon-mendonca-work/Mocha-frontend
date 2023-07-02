@@ -41,7 +41,7 @@ export const PostProvider = ({children}) => {
     const { dispatchAuth, createMediaURL } = useContext(AuthContext);
 
     const navigate = useNavigate();
-    const currUrl = 'http://localhost:3001';
+    const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
 
     
     const getExploreFeedFunction = async() => {

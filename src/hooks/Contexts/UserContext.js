@@ -4,7 +4,7 @@ import { NotificationContext } from "./NotificationContext";
 import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();
-const currUrl = 'http://localhost:3001';
+const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
 
 export const UserProvider = ({children}) => {
 
