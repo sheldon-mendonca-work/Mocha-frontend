@@ -38,10 +38,9 @@ export const PostProvider = ({children}) => {
     const [ likedList, setLikedList ] = useState([]);
     const [ bookmarkedList, setBookmarkedList ] = useState([]);
     const { showNotif, setIsLoading, backDropCardVisible } = useContext(NotificationContext);
-    const { dispatchAuth, createMediaURL } = useContext(AuthContext);
+    const { dispatchAuth, createMediaURL, currUrl } = useContext(AuthContext);
 
     const navigate = useNavigate();
-    const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
 
     
     const getExploreFeedFunction = async() => {
@@ -101,8 +100,8 @@ export const PostProvider = ({children}) => {
         } catch (error) {
             setUserPosts([]);
             setIsLoading(false);
-            navigate('/home');
-            showNotif('Error', 'Failure in fetching post');
+            navigate('/error');
+            showNotif('Error', 'Post not found');
         }finally{
             setIsLoading(false);
         }

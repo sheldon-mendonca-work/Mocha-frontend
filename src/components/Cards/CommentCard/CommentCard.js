@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import ExpandMoreCard from "../ExpandMoreCard/ExpandMoreCard";
 import { useContext } from "react";
 import { NotificationContext } from "../../../hooks/Contexts/NotificationContext";
+import { DoubleImageLayout, QuadImageLayout, SingleImageLayout, TripleImageLayout } from "../../Util/ImageLayout/ImageLayout";
 
 var relativeTime = require('dayjs/plugin/relativeTime');
 
@@ -38,7 +39,7 @@ const CommentCard = (props) => {
         </div>
         <div className="commentcard-userpost">
             {post.postDec.length > 0 && <div className="commentcard-postDec">{post.postDec.split('\n').map((line, index) => <p key={index}>{line}</p>)}</div>}
-            {
+            {/* {
                 post.postImgLink.length > 0 && 
                     <div className="commentcard-imgArrDiv">{post.postImgLink.map((imgLink) => {
                         switch (imgLink.type) {
@@ -57,7 +58,11 @@ const CommentCard = (props) => {
                         }
                     })}
                 </div>
-            }
+            } */}
+            { post.postImgLink.length === 1 && <SingleImageLayout postImgLink={post.postImgLink} />}
+            { post.postImgLink.length === 2 && <DoubleImageLayout postImgLink={post.postImgLink} />}
+            { post.postImgLink.length === 3 && <TripleImageLayout postImgLink={post.postImgLink} />}
+            { post.postImgLink.length >= 4 && <QuadImageLayout postImgLink={post.postImgLink} />}
 
         </div>
         <PostActionBar post={post} typePost={typePost} className="commentcard-postaction"/>

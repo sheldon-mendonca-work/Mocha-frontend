@@ -4,11 +4,10 @@ import { NotificationContext } from "./NotificationContext";
 import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();
-const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
 
 export const UserProvider = ({children}) => {
 
-    const { initAuthState, dispatchAuth, getNotFollowedList, authState, createMediaURL } = useContext(AuthContext);
+    const { initAuthState, dispatchAuth, getNotFollowedList, authState, createMediaURL, currUrl } = useContext(AuthContext);
     const { showNotif, setIsLoading } = useContext(NotificationContext);
     const [ userProfile, setUserProfile ] = useState(initAuthState.user);
     const [ followerList, setFollowerList ] = useState([]);

@@ -31,6 +31,7 @@ const initAuthState = {
 
 
 const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
+// const currUrl = 'https://localhost:3001';
 
 export const AuthContext = createContext();
 
@@ -85,6 +86,7 @@ export const AuthProvider = ({children}) => {
                 return true;
             }else return false;
         } catch (error) {
+            
             return false;
         } finally {
             setIsLoading(false);
@@ -412,7 +414,7 @@ export const AuthProvider = ({children}) => {
         // eslint-disable-next-line
     },[]);
 
-    return <AuthContext.Provider value={{ initAuthState, authState, dispatchAuth, emailUserLoginFunction, phoneUserLoginFunction, testUserLogin, createUserFunction, deleteUserFunction, logoutUserFunction, notFollowList, getNotFollowedList, checkUniqueUsername, checkValidMedia, createMediaURL }}>
+    return <AuthContext.Provider value={{ initAuthState, authState, dispatchAuth, emailUserLoginFunction, phoneUserLoginFunction, testUserLogin, createUserFunction, deleteUserFunction, logoutUserFunction, notFollowList, getNotFollowedList, checkUniqueUsername, checkValidMedia, createMediaURL, currUrl }}>
         {children}
     </AuthContext.Provider>
 }

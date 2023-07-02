@@ -73,6 +73,10 @@ const TweetForm = (props) => {
     const addFileInputChangeHandler = (event) => {
         event.stopPropagation();
         const media = event.target.files[0];
+        if(postTweet.post.postImgLink.length >= 6){
+            showNotif('Error', "Can accept upto 5 files.");
+            return;
+        }
         const {isValid, message} = checkValidMedia(media);
         if(isValid){
 

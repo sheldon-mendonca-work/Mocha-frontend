@@ -68,7 +68,7 @@ const UserProfile = () => {
                 <span className="userprofile-type" onClick={()=>navigate(`/user/${userID}/bookmarks`)}>Bookmarks</span>
             </div>
             {userPosts.length === 0 && authState.user._id !== userID && <div className="no-posts-found">No posts found...</div>}
-            {userPosts.length === 0 && authState.user._id === userID && <div className="no-posts-found">Start posting <span onClick={()=>navigate('/compost')}>here...</span></div>}
+            {userPosts.length === 0 && authState.user._id === userID && <div className="no-posts-found">Start posting <span onClick={()=>navigate('/compose')}>here...</span></div>}
             {userPosts.length > 0 && <ScrollFeed userPosts={userPosts} />}
         </div>
     </BoilerPlate>
