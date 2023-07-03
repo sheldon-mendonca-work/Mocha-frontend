@@ -32,6 +32,7 @@ const UserProfile = () => {
         getUserProfile(userID);
         switch (typeID) {
             case undefined:
+                getUserPosts(userID, "posts");
                 break;
                 
             case "likes": 
@@ -57,7 +58,6 @@ const UserProfile = () => {
         
         // eslint-disable-next-line
     },[userID, typeID])
-
 
     return <BoilerPlate className="userprofile-boilerplate">
         <div className="userprofile-main">

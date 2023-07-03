@@ -5,7 +5,7 @@
 */
 
 import { createContext, useContext,  useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { AuthContext } from "./AuthContext";
 import { NotificationContext } from "./NotificationContext";
 import findCommonObjects from "../../components/Util/Helpers/findCommonObjects";
@@ -41,7 +41,7 @@ export const PostProvider = ({children}) => {
     const { dispatchAuth, createMediaURL, currUrl } = useContext(AuthContext);
 
     const navigate = useNavigate();
-
+    const location = useLocation();
     
     const getExploreFeedFunction = async() => {
         try {
@@ -190,7 +190,11 @@ export const PostProvider = ({children}) => {
                 }
                 setPostTweet(initPostState);
                 setIsLoading(false);
-                if(backDropCardVisible)navigate(-1);
+                if(backDropCardVisible){
+                    navigate(-1);
+                }else{
+                    window.location.reload();
+                }
                 showNotif('Success', 'Creating post successful');
                 return true;
             }
@@ -269,7 +273,11 @@ export const PostProvider = ({children}) => {
             if(response.status === 201){
                 getExploreFeedFunction();
                 setIsLoading(false);
-                navigate(`home`)
+                if(location.pathname === `post/${postID}`){
+                    navigate(`home`);
+                }else{
+                    window.location.reload();
+                }
                 showNotif('Success', 'deleting post successful');
                 return;
             }
