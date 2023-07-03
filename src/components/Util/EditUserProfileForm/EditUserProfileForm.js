@@ -3,11 +3,15 @@ import { AuthContext } from "../../../hooks/Contexts/AuthContext";
 import './EditUserProfileForm.css';
 import { UserContext } from "../../../hooks/Contexts/UserContext";
 import TextInput from "../TextInput/TextInput";
+import { useNavigate } from "react-router-dom";
+import { NotificationContext } from "../../../hooks/Contexts/NotificationContext";
 
 const EditUserProfileForm = () => {
     const { authState, checkValidMedia } = useContext(AuthContext);
     const { editUserFunction } = useContext(UserContext);
     const [ editUser, setEditUser ] = useState(authState.user);
+    const navigate = useNavigate();
+    const { showNotif } = useContext(NotificationContext);
 
     const formSubmitHandler = (event) =>{
         event.preventDefault();
@@ -20,6 +24,11 @@ const EditUserProfileForm = () => {
     }
 
     useEffect(()=>{
+        if(authState.user._id === "23722911-080f-4a3a-82bb-185caad7fb75"){
+            navigate(`/user/${authState.user._id}`);
+            showNotif("Error", "Cannot edit guest user. Create a new account.");
+            return
+        }
         setEditUser(authState.user);// eslint-disable-next-line
     }, [authState.user._id]);
 

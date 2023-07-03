@@ -38,6 +38,10 @@
     border-bottom: 3px solid rgb(var(--color-primary-light));
 }
 
-.feedsort-heading .homepage-active{
+.homepage-active{
     border-bottom: 3px solid rgb(var(--color-primary-light));
+}
+
+.homepage-inactive{
+    border-bottom: 3px solid transparent;
 }

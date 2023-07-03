@@ -8,14 +8,15 @@ const FollowerListCard = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const list = location.pathname.slice(location.pathname.lastIndexOf('/')+1) === "following" ? followingList : followerList;
+    const type = location.pathname.slice(location.pathname.lastIndexOf('/')+1);
+    const list = type === "following" ? followingList : followerList;
 
     const userIDArray = location.pathname.split('/');
     const userID = userIDArray[userIDArray.length-2];
     return <>
         <div className="userprofile-types">
-            <span className="userprofile-type" onClick={()=>navigate(`/user/${userID}/followers`)}>Followers</span>
-            <span className="userprofile-type" onClick={()=>navigate(`/user/${userID}/following`)}>Following</span>
+            <span className={`userprofile-type ${type !== "following" ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}/followers`)}>Followers</span>
+            <span className={`userprofile-type ${type === "following" ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}/following`)}>Following</span>
         </div>
         <ScrollUser userList={list} />
     </>

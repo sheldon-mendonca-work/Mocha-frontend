@@ -22,7 +22,7 @@ const ExpandMoreCard = (props) => {
     const editPostFunction = (event) => {
         event.stopPropagation();
 
-        setShowExpMore(prevState => !prevState);
+        setShowExpMore(false);
 
         const currPost = userPosts.find(({_id})=> _id === value.postID);
         let parentPostObj = undefined;
@@ -38,6 +38,7 @@ const ExpandMoreCard = (props) => {
 
     const deletePostHandler = (event) => {
         event.stopPropagation();
+        setShowExpMore(false);
         deletePostFunction(value.postID);
     }
 

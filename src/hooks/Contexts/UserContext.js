@@ -111,7 +111,6 @@ export const UserProvider = ({children}) => {
             
             if(response.status === 201){
                 const { user } = responseJSON;
-                console.log(user);
                 dispatchAuth({type: 'UPDATE_AUTH_USER', value: user});
                 
                 setUserProfile(prevState => prevState._id === user._id ? user : prevState);

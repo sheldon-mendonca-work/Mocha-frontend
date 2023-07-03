@@ -3,15 +3,21 @@ import './UserProfileCard.css'
 import { AuthContext } from '../../../../hooks/Contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../../hooks/Contexts/UserContext';
+import { NotificationContext } from '../../../../hooks/Contexts/NotificationContext';
 
 const UserProfileCard = (props) => {
     const { userProfile } = props;
     const { _id, displayName, username, bio, profileImg, bannerImg, followers, following } = userProfile;
     const { followUserFunction, unfollowUserFunction } = useContext(UserContext)
     const { authState } = useContext(AuthContext);
+    const { showNotif } = useContext(NotificationContext);
     const navigate = useNavigate();
     
     const editProfileHandler = () => {
+        if(_id === "23722911-080f-4a3a-82bb-185caad7fb75"){
+            showNotif("Error", "Cannot edit guest user. Create a new account.");
+            return
+        }
         navigate(`/user/${_id}/editProfile`)
     }
 

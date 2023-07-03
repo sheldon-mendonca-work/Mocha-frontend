@@ -63,9 +63,9 @@ const UserProfile = () => {
         <div className="userprofile-main">
             <UserProfileCard userProfile={userProfile} />
             <div className="userprofile-types">
-                <span className="userprofile-type" onClick={()=>navigate(`/user/${userID}`)}>Posts</span>
-                <span className="userprofile-type" onClick={()=>navigate(`/user/${userID}/likes`)}>Likes</span>
-                <span className="userprofile-type" onClick={()=>navigate(`/user/${userID}/bookmarks`)}>Bookmarks</span>
+                <span className={`userprofile-type ${!(typeID === "likes" || typeID === "bookmarks") ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}`)}>Posts</span>
+                <span className={`userprofile-type ${typeID === "likes" ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}/likes`)}>Likes</span>
+                <span className={`userprofile-type ${typeID === "bookmarks" ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}/bookmarks`)}>Bookmarks</span>
             </div>
             {userPosts.length === 0 && authState.user._id !== userID && <div className="no-posts-found">No posts found...</div>}
             {userPosts.length === 0 && authState.user._id === userID && <div className="no-posts-found">Start posting <span onClick={()=>navigate('/compose')}>here...</span></div>}
