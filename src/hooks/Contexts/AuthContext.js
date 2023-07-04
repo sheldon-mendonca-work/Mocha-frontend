@@ -334,7 +334,7 @@ export const AuthProvider = ({children}) => {
 
     const deleteUserFunction = async () => {
         try {
-            if(authState.user._id ===  "f9cba43f-7882-4d40-9b7e-a7932629ad43"){
+            if(authState.user._id ===  "23722911-080f-4a3a-82bb-185caad7fb75"){
                 logoutUserFunction();
                 return;
             }
