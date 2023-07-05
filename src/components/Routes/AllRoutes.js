@@ -9,11 +9,12 @@ import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import SinglePost from "../Pages/SinglePost/SinglePost";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import CreatePost from "../Pages/CreatePost/CreatePost";
+import ExplorePage from "../Pages/HomePage/ExplorePage";
 
 const AllRoutes = () => {
     return <Routes>
         <Route path='/' element={<LandingPage />}/>
-        
+        <Route path='/explore' element={<ExplorePage />} />
         <Route 
             path='/home' 
             element={<HomePage />}

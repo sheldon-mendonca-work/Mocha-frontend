@@ -47,16 +47,41 @@ export const PostProvider = ({children}) => {
         try {
             setIsLoading(true);
             const response = await fetch(`${currUrl}/api/posts`, {method: 'GET'});
+
+            const responseJSON = await response.json();
+
+            if(!response.ok){
+                throw new Error(responseJSON);
+            }
             
             if(response.status === 200){
-                const responseJSON = await response.json();
                 setIsLoading(false);
                 setUserPosts(responseJSON.posts);
             }
         } catch (error) {
-            console.log(error);
             setIsLoading(false);
-            showNotif('Error', 'Failure in fetching Feed')
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`)
+        }
+    }
+
+    const getHomeFeedFunction = async() => {
+        try {
+            setIsLoading(true);
+            const response = await fetch(`${currUrl}/api/posts/following`, {
+                method: 'GET',
+                headers: {"authorization": localStorage.getItem("MochaToken")}
+            });
+            const responseJSON = await response.json();
+            
+            if(response.status === 200){
+                setIsLoading(false);
+                setUserPosts(responseJSON.posts);
+            }
+        } catch (error) {
+            setIsLoading(false);
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`)
         }
     }
 
@@ -74,7 +99,8 @@ export const PostProvider = ({children}) => {
             }
         } catch (error) {
             setIsLoading(false);
-            showNotif('Error', 'Failure in fetching user posts');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
         }finally{
             setIsLoading(false);
         }
@@ -87,21 +113,22 @@ export const PostProvider = ({children}) => {
                 method: 'GET'
             });
             const responseData = await response.json();
+
+            if(!response.ok){
+                throw new Error(responseData)
+            }
+            
             if(response.status === 200){
                 setUserPosts(responseData.posts);
                 setIsLoading(false);
                 return;
-            }else{
-                setUserPosts([]);
-                setIsLoading(false);
-                navigate('/home');
-                showNotif('Error', "Receiving Post unsuccessful.");
             }
         } catch (error) {
             setUserPosts([]);
             setIsLoading(false);
             navigate('/error');
-            showNotif('Error', 'Post not found');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
         }finally{
             setIsLoading(false);
         }
@@ -126,7 +153,8 @@ export const PostProvider = ({children}) => {
             }
         } catch (error) {
             setIsLoading(false);
-            showNotif('Error', 'Failure in liking/disiking post');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
         }finally{
             setIsLoading(false);
         }
@@ -152,7 +180,8 @@ export const PostProvider = ({children}) => {
             }
         } catch (error) {
             setIsLoading(false);
-            showNotif('Error', 'Failure in bookmarking post');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
         }finally{
             setIsLoading(false);
         }
@@ -202,7 +231,8 @@ export const PostProvider = ({children}) => {
         } catch (error) {
             setPostTweet(initPostState);
             setIsLoading(false);
-            showNotif('Error', 'Failure in editing post');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
             return false;
         }finally{
             setIsLoading(false);
@@ -257,7 +287,8 @@ export const PostProvider = ({children}) => {
             setPostTweet(initPostState);
             setIsLoading(false);
             navigate(`/post/${postID}`)
-            showNotif('Error', 'Failure in Editing post');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
             return false;
         }
     }
@@ -283,7 +314,9 @@ export const PostProvider = ({children}) => {
             }
         } catch (error) {
             navigate(`home`)
-            showNotif('Error', 'Failure in deleting post');
+            setIsLoading(false);
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
         }
     }
 
@@ -294,29 +327,31 @@ export const PostProvider = ({children}) => {
                 method: 'GET'
             });
             const responseData = await response.json();
+            
+            if(!response.ok){
+                throw new Error(responseData)
+            }
+
             if(response.status === 200){
                 const { likedList, bookmarkedList } = responseData;
                 setLikedList(likedList);
                 setBookmarkedList(bookmarkedList);
                 setIsLoading(false);
                 return;
-            }else{
-                setIsLoading(false);
-                navigate(`/post/${postID}`);
-                showNotif('Error', "Receiving Post unsuccessful.");
             }
         } catch (error) {
             setUserPosts([]);
             setIsLoading(false);
-            navigate('/home');
-            showNotif('Error', 'Failure in fetching post');
+            navigate('/explore');
+            console.log(error)
+            showNotif('Error', `${error.status}: ${error.error}`);
         }finally{
             setIsLoading(false);
         }
     }
 
 
-    return <PostContext.Provider value={{ initPostState, userPosts, setUserPosts, getExploreFeedFunction, getSinglePost, likePostFunction, createPostFunction, setVisitedState, bookmarkPostFunction, postTweet, setPostTweet, getUserPosts, deletePostFunction, editPostFunction, sortPosts, setSortPosts, likedList, bookmarkedList, getPostUsersByType }}>
+    return <PostContext.Provider value={{ initPostState, userPosts, setUserPosts, getExploreFeedFunction, getSinglePost, likePostFunction, createPostFunction, setVisitedState, bookmarkPostFunction, postTweet, setPostTweet, getUserPosts, deletePostFunction, editPostFunction, sortPosts, setSortPosts, likedList, bookmarkedList, getPostUsersByType, getHomeFeedFunction }}>
         {children}
     </PostContext.Provider>
 }

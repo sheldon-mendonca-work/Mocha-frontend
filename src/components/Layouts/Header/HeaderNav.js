@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './HeaderNav.css'
-import { BinIcon, BookmarkIcon, ExpandMoreIcon, ExploreIcon, HeartIcon, HomeIcon, LogoutIcon, PostsIcon, UserProfileIcon } from "../../Util/Icons";
+import { BinIcon, BookmarkIcon, ExpandMoreIcon, ExploreIcon, HeartIcon, HomeIcon, LogoutIcon, UserProfileIcon } from "../../Util/Icons";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../hooks/Contexts/AuthContext";
 
@@ -10,6 +10,7 @@ const HeaderNav = (props) => {
 
     const {authState, deleteUserFunction, logoutUserFunction} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const navLinkClickHandler = (event, link) => {
         event.stopPropagation();
@@ -60,50 +61,49 @@ const HeaderNav = (props) => {
         return <div {...props} className={`${props.className} expandbackdrop`}></div>
     }
 
+    let locationName = location.pathname.split('/')[1];
+    let locationType = location.pathname.split('/')[3];
+    
+    locationName = locationName === undefined ? "" : locationName;
+    locationType = locationType === undefined ? "" : locationType;
+
     return <nav className="header-nav-list">
         <span onClick={(event)=>navLinkClickHandler(event, `/home`)}>
-            <span className="header-nav-list-span">
+            <span className={`header-nav-list-span ${locationName === "home"? "active-page": ""}`}>
                 <span className="header-nav-list-item"><HomeIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">Home</span>
             </span>
         </span>
-        <span onClick={(event)=>navLinkClickHandler(event, `/home`)}>
-            <span className="header-nav-list-span">
-                <span className="header-nav-list-item"><ExploreIcon className="header-nav-svg"/></span>
+        <span onClick={(event)=>navLinkClickHandler(event, `/explore`)}>
+            <span className={`header-nav-list-span ${locationName === "explore"? "active-page": ""}`}>
+                <span className="header-nav-list-item"><ExploreIcon className="header-nav-svg"/></span> 
                 <span className="header-nav-text">Explore</span>
             </span>
         </span>
 
         <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}`)}>
-            <span className="header-nav-list-span">
+            <span className={`header-nav-list-span ${(locationName === "user" && locationType === "") ? "active-page": ""}`}>
                 <span className="header-nav-list-item"><UserProfileIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">Profile</span>
             </span>
         </span>
 
-        <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}`)}>
-            <span className="header-nav-list-span">
-                <span className="header-nav-list-item"><PostsIcon className="header-nav-svg"/></span>
-                <span className="header-nav-text">Posts</span>
-            </span>
-        </span>
-
         <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}/bookmarks`)}>
-            <span className="header-nav-list-span">
+            <span className={`header-nav-list-span ${(locationName === "user" && locationType === "bookmarks") ? "active-page": ""}`}>
                 <span className="header-nav-list-item"><BookmarkIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">Bookmarks</span>
             </span>
         </span>
 
         <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}/likes`)}>
-            <span className="header-nav-list-span">
+            <span className={`header-nav-list-span ${(locationName === "user" && locationType === "likes") ? "active-page": ""}`}>
                 <span className="header-nav-list-item"><HeartIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">Likes</span>
             </span>
         </span>
 
         <span  className="header-nav-more">
-            <span className="header-nav-list-span" onClick={navMoreClickHandler}>
+            <span className={`header-nav-list-span`} onClick={navMoreClickHandler}>
                 <span className="header-nav-list-item"><ExpandMoreIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">More</span>
             </span>

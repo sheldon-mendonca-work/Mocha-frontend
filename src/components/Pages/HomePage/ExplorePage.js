@@ -7,20 +7,16 @@ import HomePageHeading from "./HomePageHeading/HomePageHeading";
 import ScrollFeed from "../../Util/ScrollFeed/ScrollFeed";
 import { AuthContext } from "../../../hooks/Contexts/AuthContext";
 import { NotificationContext } from "../../../hooks/Contexts/NotificationContext";
-import { useNavigate } from "react-router-dom";
 
-const HomePage = () => {
+const ExplorePage = () => {
 
-    const { userPosts, initPostState, getHomeFeedFunction, setPostTweet, setVisitedState, sortPosts } = useContext(PostContext);
+    const { userPosts, initPostState, getExploreFeedFunction, setPostTweet, setVisitedState, sortPosts } = useContext(PostContext);
     const { authState } = useContext(AuthContext);
     const { setBackDropCardVisible } = useContext(NotificationContext);
-    const navigate = useNavigate();
-
-
-    useEffect(()=>{    
-        setBackDropCardVisible(false);
-        if(!authState.isLoggedIn)navigate('/explore ')
-        getHomeFeedFunction();
+    
+    useEffect(()=>{
+        setBackDropCardVisible(false)
+        getExploreFeedFunction();
         setVisitedState({type:"home", value: ""});
         setPostTweet(initPostState);
         // eslint-disable-next-line
@@ -34,7 +30,7 @@ const HomePage = () => {
 
     return <BoilerPlate className="homepage-boilerplate">
         <div className="homepage-feed">
-            <HomePageHeading headingName={"HomePage"}/>
+            <HomePageHeading headingName={"Explore"}/>
             {authState.isLoggedIn && <TweetForm className="homepage-tweetform" />}
             {userPosts.length === 0 &&  <div className="no-posts-found">No posts found. Follow a user to start!</div>}
             <ScrollFeed userPosts={ getUserPosts() } />
@@ -42,4 +38,4 @@ const HomePage = () => {
     </BoilerPlate>
 };
 
-export default HomePage;
+export default ExplorePage;

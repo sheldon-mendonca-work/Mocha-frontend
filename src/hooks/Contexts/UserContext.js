@@ -29,7 +29,7 @@ export const UserProvider = ({children}) => {
                 // showNotif('Success', 'Successfully fetched user');
             }else{
                 setIsLoading(false);
-                navigate('/home');
+                navigate('/explore');
                 showNotif('Error', 'Failure in fetching user'); 
             }
         } catch (error) {

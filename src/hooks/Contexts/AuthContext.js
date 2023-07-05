@@ -31,7 +31,7 @@ const initAuthState = {
 
 
 const currUrl = 'https://sheldon-mocha-backend.netlify.app/';
-// const currUrl = 'https://localhost:3001';
+// const currUrl = 'http://localhost:3001';
 
 export const AuthContext = createContext();
 
@@ -309,7 +309,7 @@ export const AuthProvider = ({children}) => {
                     navigate('/home')
                 }
                 
-                // showNotif('Success', "AutoLogin successful");
+                showNotif('Success', "AutoLogin successful");
             }else{
                 dispatchAuth({type: 'SET_AUTH_STATE_VALUE', value:initAuthState});
                 localStorage.removeItem('MochaToken');
@@ -353,7 +353,7 @@ export const AuthProvider = ({children}) => {
             }
         } catch (error) {
             setIsLoading(false);
-            navigate('/home')
+            navigate('/explore')
             showNotif('Error', "Error in deleting User.");
         }
     }
@@ -373,12 +373,12 @@ export const AuthProvider = ({children}) => {
                 dispatchAuth({type: 'SET_AUTH_STATE_VALUE', value:initAuthState});
                 setNotFollowList([])
                 setIsLoading(false);
-                navigate('/home')
+                navigate('/explore')
                 showNotif('Success', "Logout User successful"); 
             }
         } catch (error) {
             setIsLoading(true);
-            navigate('/home');
+            navigate('/explore');
             showNotif('Error', "Error in logging out User");
         }
     }
