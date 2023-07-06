@@ -287,7 +287,6 @@ export const PostProvider = ({children}) => {
             setPostTweet(initPostState);
             setIsLoading(false);
             navigate(`/post/${postID}`)
-            console.log(error)
             showNotif('Error', `${error.status}: ${error.error}`);
             return false;
         }

@@ -19,6 +19,12 @@
     background-color: rgba(var(--color-primary-light-hover-1));
 }
 
+.header-user-card-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header-user-card-img > img{
     height: 4rem;
     border-radius: 50%;
@@ -41,6 +47,7 @@
     color: rgb(var(--color-light-text-1));
     font-weight: 700;
     margin-right: auto;
+    text-align: left;
 }
 
 .header-user-card-userName{
