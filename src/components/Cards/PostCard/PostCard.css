@@ -24,7 +24,6 @@
 
 .postcard-imgdiv{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     grid-row: 1/2;
@@ -33,6 +32,7 @@
 
 .postcard-imgArrDiv{
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
