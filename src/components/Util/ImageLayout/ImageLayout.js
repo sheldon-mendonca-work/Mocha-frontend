@@ -6,7 +6,7 @@ const mediaFile = (imgLink) => {
             return <img key={imgLink._id} src={imgLink.name} alt={imgLink.name} />
             
         case 'video':
-            return  <video width="320" height="240" controls>
+            return  <video width="320" height="240" controls onClick={(event)=>{event.stopPropagation()}}>
             <source src={imgLink.name} type="video/mp4" />
             <source src={imgLink.name} type="video/ogg" />
             Your browser does not support the video tag.
