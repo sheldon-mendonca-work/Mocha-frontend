@@ -37,32 +37,32 @@ export const NotficationProvider = ({children}) => {
             case "Success":
                 fillColor = "#270";
                 backColor = "#DFF2BF";
-                svgType = <SuccessIcon className="done" fill={fillColor}/>
+                svgType = <SuccessIcon className="done done-success"/>
                 break;
             
             case "Error" : 
                 fillColor = "#D8000C";
                 backColor = "#FFBABA";
-                svgType = <ErrorIcon className="done" fill={fillColor} />
+                svgType = <ErrorIcon className="done done-error" />
                 break;
 
             case "UserLogin" : 
                 fillColor = "#059";
                 backColor = "#BEF";
-                svgType = <UserLogInIcon className="done" fill={fillColor} />
+                svgType = <UserLogInIcon className="done done-userlogin" />
                 break;
 
             case "UserLogout" : 
                 fillColor = "#9F6000";
                 backColor = "#FEEFB3";
-                svgType = <UserLogOutIcon className="done" fill={fillColor} />
+                svgType = <UserLogOutIcon className="done done-userlogout" />
                 break;
 
             
             default: 
                 fillColor = "#00529B";
                 backColor = "#BDE5F8";
-                svgType = <WarningIcon className="done" fill={fillColor} />;
+                svgType = <WarningIcon className="done done-warning" />;
                 break;
         }
 

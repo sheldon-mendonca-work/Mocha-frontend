@@ -164,8 +164,11 @@
     transform: translate(-50%, -50%);
 }
 
-.signup-textarea-div{
+.signup-pfUrl-div{
     margin: 4rem 0 1rem 0;
+}
+
+.signup-textarea-div{
     height: 10rem;
 }
 

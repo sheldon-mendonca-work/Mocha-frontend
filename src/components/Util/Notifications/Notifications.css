@@ -47,6 +47,25 @@
     border-radius: 50%;
 }
 
+.done-success{
+    fill: rgb(34, 119, 0); 
+}
+
+.done-error{
+    fill: rgb(216, 0, 12); 
+}
+
+.done-userlogin{
+    fill: rgb(0, 85, 153); 
+}
+
+.done-userlogout{
+    fill: rgb(159, 96, 0); 
+}
+
+.done-warning{
+    fill: rgb(0, 82, 155); 
+}
 
 
 .close{

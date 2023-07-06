@@ -52,14 +52,14 @@ const EditUserProfileForm = () => {
         }
     }
 
-    const backImgLinkChangeHandler = (event) => {
-        const newFile = event.target.files[0];
-        if(checkValidMedia(newFile)){
-            setEditUser(prevState => ({...prevState, backImgLink: newFile}))
-        }else{
-            return;
-        }
-    }
+    // const backImgLinkChangeHandler = (event) => {
+    //     const newFile = event.target.files[0];
+    //     if(checkValidMedia(newFile)){
+    //         setEditUser(prevState => ({...prevState, backImgLink: newFile}))
+    //     }else{
+    //         return;
+    //     }
+    // }
 
     return <>
         <h2>Edit Details</h2>
@@ -96,8 +96,7 @@ const EditUserProfileForm = () => {
             </span>
 
             <span className="formedit-span-bk">
-                <TextInput type="text" placeholder="Background Image(not functional)" maxLength="150" id="formedit-backimglink"  value={editUser.backImgLink.name} readOnly={true}/>
-                <input type="file" className="formedit-file-input" onChange={backImgLinkChangeHandler} />
+                <TextInput type="text" placeholder="Portfolio URL" maxLength="150" id="formedit-pfUrl" value={editUser.pfUrl} onChange={(event)=>setEditUser(prevState => ({...prevState, pfUrl: event.target.value}))}  />
             </span>
             
             <span className="formedit-span-bi">

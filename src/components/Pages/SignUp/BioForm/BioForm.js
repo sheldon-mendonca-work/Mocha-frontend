@@ -12,6 +12,7 @@ import { AuthContext } from "../../../../hooks/Contexts/AuthContext";
 import '../SignUp.css';
 import { NotificationContext } from "../../../../hooks/Contexts/NotificationContext";
 import Footer from "../../../Layouts/Footer/Footer";
+import TextInput from "../../../Util/TextInput/TextInput";
 
 const BioForm = () => {
 
@@ -21,7 +22,8 @@ const BioForm = () => {
         profileImg: "",
         bannerImg: "",
         backImgLink: "",
-        bio: ""
+        bio: "",
+        pfUrl: ""
     })
 
 
@@ -42,7 +44,7 @@ const BioForm = () => {
 
         event.preventDefault();
         createUserFunction({...(authState.user), 
-            bio: userBioDetails.bio,  profileImg: userBioDetails.profileImg, backImgLink: userBioDetails.backImgLink, bannerImg: userBioDetails.bannerImg
+            bio: userBioDetails.bio, pfUrl: userBioDetails.pfUrl,  profileImg: userBioDetails.profileImg, backImgLink: userBioDetails.backImgLink, bannerImg: userBioDetails.bannerImg
         });
     }
     const changeProfileImgHandler = (event) => {
@@ -72,6 +74,10 @@ const BioForm = () => {
         setUserBioDetails((prevState) => ({...prevState, bio: event.target.value}))
     }
 
+    const pfUrlChangeHandler = (event) => {
+        setUserBioDetails((prevState) => ({...prevState, pfUrl: event.target.value}))
+    }
+
     return <div className="signupPage">
         <div className="signup-main">
             <p>Step 2 of 2</p>
@@ -91,6 +97,9 @@ const BioForm = () => {
                             alt={"Enter Profile"} className="signup-card-img" />
                             <input type="file" onChange={changeProfileImgHandler} className="signup-pf-input"/>
                         </div>
+                    </div>
+                    <div className="signup-pfUrl-div">
+                        <TextInput type="text" placeholder="Portfolio URL" maxLength="50" value={userBioDetails.pfUrl} onChange={pfUrlChangeHandler} />
                     </div>
                     <div className="signup-textarea-div">
                         <textarea value={userBioDetails.bio} onChange={bioChangeHandler} placeholder="Tell us something about yourself..." className="signup-textarea"/>

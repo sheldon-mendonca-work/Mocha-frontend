@@ -16,6 +16,7 @@ const initAuthState = {
     phNo: "",
     dateOfBirth: "",
     bio: "",
+    pfUrl: "",
     profileImg: {name: ""},
     bannerImg: {name: ""},
     backImgLink: {name: ""},

@@ -7,7 +7,7 @@ import { NotificationContext } from '../../../../hooks/Contexts/NotificationCont
 
 const UserProfileCard = (props) => {
     const { userProfile } = props;
-    const { _id, displayName, username, bio, profileImg, bannerImg, followers, following } = userProfile;
+    const { _id, displayName, username, bio, pfUrl, profileImg, bannerImg, followers, following } = userProfile;
     const { followUserFunction, unfollowUserFunction } = useContext(UserContext)
     const { authState } = useContext(AuthContext);
     const { showNotif } = useContext(NotificationContext);
@@ -52,6 +52,7 @@ const UserProfileCard = (props) => {
             </span>
             <p className="userprofile-username">@{username}</p>
             {bio.length > 0  && <p className="userprofile-bio">{bio}</p>}
+            {pfUrl.length > 0  && <a href={pfUrl} target="_blank" rel="noreferrer noopener" className="userprofile-pfUrl">{pfUrl}</a>}
             <div className="userprofile-followcard">
                 <span className="userprofile-follower" onClick={()=>navigate(`/user/${_id}/followers`)}>
                     <span className="userprofile-follownum">{followers.length}</span> {followers.length === 1 ? `Follower` : `Followers`}
