@@ -17,6 +17,7 @@
 
 .postaction-link:hover{
     background-color: rgb(var(--color-primary-light-hover-1));
+    cursor: pointer;
 }
 
 .postaction-like{

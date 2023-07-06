@@ -3,7 +3,7 @@ import ButtonRounded from '../ButtonRounded/ButtonRounded';
 import './TweetForm.css';
 import { PostContext } from '../../../hooks/Contexts/PostContext';
 import { AuthContext } from '../../../hooks/Contexts/AuthContext';
-import { CrossIcon, EmojiIcon, ImageIcon } from '../Icons';
+import { CrossIcon,  ImageIcon } from '../Icons';
 import { NotificationContext } from '../../../hooks/Contexts/NotificationContext';
 // import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -111,8 +111,8 @@ const TweetForm = (props) => {
             <span className='tweetform-actions-left'>
                 <span className='tweetform-fileInputspan'><ImageIcon className="form-icon"/>
                 <input type='file' className='tweetform-fileInput' onChange={addFileInputChangeHandler}  multiple/></span>
-                <span className='tweetform-fileInputspan'><EmojiIcon className="form-icon"/>
-                </span>
+                {/* <span className='tweetform-fileInputspan'><EmojiIcon className="form-icon"/>
+                </span> */}
             </span>
             <ButtonRounded className={`tweetform-submit ${postIsValid() ? 'validForm' : "invalidForm"}`} type="submit">Tweet</ButtonRounded>
         </div>
