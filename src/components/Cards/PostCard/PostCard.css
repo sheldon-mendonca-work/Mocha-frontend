@@ -30,6 +30,11 @@
     grid-column: 1/2;
 }
 
+.postcard-imgArrDiv{
+    display: flex;
+    justify-content: center;
+}
+
 .postcard-userdetails{
     display: flex;
     justify-content: space-between;

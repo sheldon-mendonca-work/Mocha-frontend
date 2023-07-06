@@ -14,6 +14,9 @@ const PageHeading = (props) => {
         switch (title) {
             case 'home':
                 return 'Home';
+
+            case 'explore':
+                return 'Explore';
         
             case 'post':
                 return 'Tweet';
