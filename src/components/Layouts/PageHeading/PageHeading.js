@@ -17,6 +17,9 @@ const PageHeading = (props) => {
 
             case 'explore':
                 return 'Explore';
+            
+            case 'error':
+                return 'Error';
         
             case 'post':
                 return 'Tweet';

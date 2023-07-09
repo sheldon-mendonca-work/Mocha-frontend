@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "../../../hooks/Contexts/UserContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import ScrollUser from "../../Util/ScrollUser/ScrollUser";
+import './FollowerListCard.css';
 
 const FollowerListCard = () => {
     const {  followerList, followingList } = useContext(UserContext);
@@ -13,13 +14,14 @@ const FollowerListCard = () => {
 
     const userIDArray = location.pathname.split('/');
     const userID = userIDArray[userIDArray.length-2];
-    return <>
+
+    return <div className="followerListcard">
         <div className="userprofile-types">
             <span className={`userprofile-type ${type !== "following" ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}/followers`)}>Followers</span>
             <span className={`userprofile-type ${type === "following" ? "homepage-active": "homepage-inactive"}`} onClick={()=>navigate(`/user/${userID}/following`)}>Following</span>
         </div>
         <ScrollUser userList={list} />
-    </>
+    </div>
 }
 
 export default FollowerListCard;

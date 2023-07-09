@@ -10,6 +10,12 @@
     text-align: right;
 }
 
+@media only screen and (max-width: 600px) {
+    .header{
+        height: min-content;
+    }
+}
+
 .header-content{
     max-width: 27rem;
     margin-left: auto;
@@ -25,6 +31,23 @@
     .header-content{
         align-items: flex-end;
         width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header-content{
+        max-width: 100rem;
+        width: 100vw;
+        flex-direction: row;
+        gap: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header-content-div{
+        display: flex;
+        flex: 1;
     }
 }
 
@@ -44,6 +67,12 @@
     .mocha-heading-1{
         width: fit-content;
         aspect-ratio: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .mocha-heading-1{
+        display: none;
     }
 }
 
@@ -89,6 +118,16 @@
     .header-tweet-icon{
         display: inline-block;
         margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header-tweet-icon{
+        position: fixed;
+        bottom: 10rem;
+        right: 5rem;
+        width: 6rem;
+        padding: 1.5rem;
     }
 }
 

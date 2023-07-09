@@ -6,6 +6,7 @@
     grid-template-columns: minmax(min-content, 3fr) 60rem 3fr;
     grid-template-rows: 6rem 1fr;
     position: relative;
+    min-height: 100vh;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -21,9 +22,25 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .boilerPlate{
+        grid-template-columns: 0 max-content 1fr;
+        padding-bottom: 6rem;
+    }
+}
+
 .header{
     grid-column: 1/2;
     grid-row: 1/-1;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .header{
+        position: fixed;
+        top: 100vh;
+        transform: translateY(-100%);
+    }
 }
 
 .mainContent{

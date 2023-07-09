@@ -31,7 +31,7 @@ const initPostState = {
 export const PostContext = createContext();
 
 export const PostProvider = ({children}) => {
-    const [ sortPosts, setSortPosts ] = useState(false); //true: likes false:date
+    const [ sortPosts, setSortPosts ] = useState(true); //true: likes false:date
     const [ userPosts, setUserPosts ] = useState([]);
     const [ visitedState, setVisitedState ] = useState({type: "home", value: ""});
     const [ postTweet, setPostTweet ] = useState(initPostState);

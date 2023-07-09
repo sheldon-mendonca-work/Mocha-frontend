@@ -3,6 +3,7 @@ import './HeaderNav.css'
 import { BinIcon, BookmarkIcon, ExpandMoreIcon, ExploreIcon, HeartIcon, HomeIcon, LogoutIcon, UserProfileIcon } from "../../Util/Icons";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../hooks/Contexts/AuthContext";
+import HeaderUserCard from "./HeaderUserCard";
 
 
 const HeaderNav = (props) => {
@@ -88,14 +89,14 @@ const HeaderNav = (props) => {
             </span>
         </span>
 
-        <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}/bookmarks`)}>
+        <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}/bookmarks`)} className="header-nav-bk">
             <span className={`header-nav-list-span ${(locationName === "user" && locationType === "bookmarks") ? "active-page": ""}`}>
                 <span className="header-nav-list-item"><BookmarkIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">Bookmarks</span>
             </span>
         </span>
 
-        <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}/likes`)}>
+        <span onClick={(event)=>navAuthLinkClickHandler(event, `/user/${authState.user._id}/likes`)} className="header-nav-lk">
             <span className={`header-nav-list-span ${(locationName === "user" && locationType === "likes") ? "active-page": ""}`}>
                 <span className="header-nav-list-item"><HeartIcon className="header-nav-svg"/></span>
                 <span className="header-nav-text">Likes</span>
@@ -110,6 +111,7 @@ const HeaderNav = (props) => {
             { moreVisible && <ExpandNavMoreContent />}
             { moreVisible && <ExpandBackdrop onClick={navMoreClickHandler}/>}
         </span>
+        {authState.isLoggedIn && <HeaderUserCard user={authState.user} />}
     </nav>
 }
 

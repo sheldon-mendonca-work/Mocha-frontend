@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import './PageNotFound.css'
-import Footer from '../../Layouts/Footer/Footer';
+import './PageNotFound.css';
+import BoilerPlate from '../../Layouts/DefaultBoilerPlate/BoilerPlate';
 
 const PageNotFound = () => {
-    return <>
+    return <BoilerPlate>
         <div className="notFoundContainer">
             <div className="containerLeft">
                 <img src={"images/2456052.jpg"} alt={"Page Not Found"} className="containerLeftImg" />
@@ -13,8 +13,7 @@ const PageNotFound = () => {
                 <p>Looks like the page/item you are looking for was not found. Go to <Link to="/" className="notFoundLink">Home Page instead?</Link></p>
             </div>
         </div>
-        <Footer />
-    </>
+    </BoilerPlate>
 }
 
 export default PageNotFound;

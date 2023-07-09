@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import './RightSideBar.css'
 import { AuthContext } from '../../../hooks/Contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import UserDetailSmall from '../../Util/UserDetailSmall/UserDetailSmall';
 
 const RightSideBar = (props) => {
@@ -46,7 +46,7 @@ const RightSideBar = (props) => {
             }
             
         </div>
-        <Footer />
+        {/* <Footer /> */}
     </div>
 }
 

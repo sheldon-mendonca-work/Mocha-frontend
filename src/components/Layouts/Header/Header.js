@@ -30,7 +30,7 @@ const Header = (props) => {
 
     return <header className={className}>
         <div className="header-content">
-            <div>
+            <div className="header-content-div">
                 <h1 className="mocha-heading-1" onClick={()=>navigate('/home')}>
                     <MochaIcon className={"mocha-icon"} />
                 </h1>

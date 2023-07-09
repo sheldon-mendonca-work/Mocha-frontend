@@ -65,7 +65,7 @@
 .dataResult{
     background-color: #fff;
     width: 90%;
-    height: 24rem;
+    max-height: 24rem;
     top: 120%;
     position: absolute;
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
