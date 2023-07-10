@@ -1,7 +1,7 @@
 # [Mocha](https://mocha-sheldon.netlify.app/)
 ## Front-end
 This is the front-end for the social media app: Mocha.
-This app has been designed using React(front-end), express(middleware and backend) and MongoDB Atlas.
+This app has been designed using React(front-end), [express(middleware and backend) and MongoDB Atlas](https://github.com/sheldon-mendonca-work/Mocha-Backend).
 The functionality of this app is inspired by Twitter.
 
 ## Screens
