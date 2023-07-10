@@ -29,7 +29,7 @@ const EditUserProfileForm = () => {
             
         }
     }
-
+    
     useEffect(()=>{
         setEditUser(authState.user);// eslint-disable-next-line
     }, [authState.user._id]);
@@ -80,9 +80,9 @@ const EditUserProfileForm = () => {
             <span className="formedit-span-ph">
                 <TextInput type="tel" placeholder="Phone Number*" id="formedit-phno"  pattern="[0-9]{10}"  value={editUser.phNo} onChange={(event)=>setEditUser(prevState => ({...prevState, phNo: event.target.value}))} />
             </span>
-            
+
             <span className="formedit-span-db">
-                <TextInput type="date" id="formedit-dateOfBirth"  value={editUser.dateOfBirth.substring(0,10)}   onChange={(event)=>setEditUser(prevState => ({...prevState, dateOfBirth: event.target.value}))} />
+                <TextInput type="date" id="formedit-dateOfBirth"  value={editUser?.dateOfBirth?.substring(0,10)??""} onChange={(event)=>setEditUser(prevState => ({...prevState, dateOfBirth: event.target.value}))} />
             </span>
             
             <span className="formedit-span-im">
